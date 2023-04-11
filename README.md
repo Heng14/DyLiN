@@ -3,7 +3,7 @@
 [![Website](https://img.shields.io/badge/website-up-yellow.svg)](https://dylin2023.github.io/)
 
 
-This repository is for the new neral light field (NeLF) method introduced in the following ECCV'22 paper:
+This repository is for the new neral light field (NeLF) method introduced in the following CVPR'23 paper:
 > **[DyLiN: Making Light Field Networks Dynamic](https://dylin2023.github.io/)** \
 > [Heng Yu](https://heng14.github.io/) <sup>1</sup>, [Joel Julin](https://joeljulin.github.io/) <sup>1</sup>, [Zoltán Á Milacski](https://scholar.google.com/citations?user=rSqodggAAAAJ&hl=es) <sup>1</sup>, [Koichiro Niinuma](https://scholar.google.com/citations?user=AFaeUrYAAAAJ&hl=en) <sup>2</sup>, and [László A. Jeni](https://www.laszlojeni.com/) <sup>1</sup> \
 > <sup>1</sup> Carnegie Mellon University <sup>2</sup> Fujitsu Research of America 
@@ -22,7 +22,7 @@ This repository is for the new neral light field (NeLF) method introduced in the
 The codebase is based on [R2L](https://github.com/snap-research/R2L).
 
 ### Environment
-We use the same environment as it. We test tested it using Python 3.9.
+We use the same environment as R2L, using Python 3.9.
 
 ### Data
 For synthetic scenes, we use data from [D-NeRF](https://github.com/albertpumarola/D-NeRF). \
@@ -40,7 +40,7 @@ CUDA_VISIBLE_DEVICES=0 python main.py --model_name R2L --config configs/lego_nov
 ```   -->
  
 ## Train DyLiN models
-There are several steps in DyLiN training which is similar as [R2L](https://github.com/snap-research/R2L).
+There are several steps in DyLiN training that are similar to [R2L](https://github.com/snap-research/R2L).
 
 (1) Train a teacher NeRF model. \
 (2) Use *pretrained* teacher NeRF model to generate synthetic data. \
@@ -72,7 +72,7 @@ CUDA_VISIBLE_DEVICES=0 python main.py --model_name nerf --config configs/lego.tx
 
 #### Step 2. 
 
-Use the pretrained NeRF model to generate synthetic data (saved in `.npy` format). For details about the  synthetic data, please refer to [R2L](https://github.com/snap-research/R2L). \
+Use the pretrained NeRF model to generate synthetic data (saved in `.npy` format). For details about the synthetic data, please refer to [R2L](https://github.com/snap-research/R2L). \
 For synthetic scenes:
 ```bash
 python tools/gen_pseudo_data_dnerf.py
