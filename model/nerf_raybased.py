@@ -629,7 +629,8 @@ class Net_offset(nn.Module):
         self.pts_linears = nn.ModuleList(
             [nn.Linear(input_ch, W)] + [nn.Linear(W, W) if i not in self.skips else nn.Linear(W + input_ch, W) for i in range(D-1)])
         
-        self.output_linear = nn.Linear(W, output_ch)
+        self.output_linear_o = nn.Linear(W, output_ch)
+        self.output_linear_d = nn.Linear(W, output_ch)
 
     def forward(self, input_pts):
         h = input_pts
@@ -639,8 +640,8 @@ class Net_offset(nn.Module):
             if i in self.skips:
                 h = torch.cat([input_pts, h], -1)
 
-        offset_o = self.output_linear(h)
-        offset_d = self.output_linear(h)
+        offset_o = self.output_linear_o(h)
+        offset_d = self.output_linear_d(h)
 
         return offset_o, offset_d   
 
