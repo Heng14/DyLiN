@@ -19,7 +19,7 @@ This repository is for the new neral light field (NeLF) method introduced in the
  -->
 
 ## Setup
-The codebase is based on [R2L](https://github.com/snap-research/R2L).
+The codebase is based on [R2L](https://github.com/snap-research/R2L). Please ensure that line #337 in load_blender.py located in the dataset folder is modified to match the pseudo data format.
 
 ### Environment
 We use the same environment as R2L, using Python 3.9.
